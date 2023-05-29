@@ -6,18 +6,32 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:03:48 by makacem           #+#    #+#             */
-/*   Updated: 2023/05/29 16:52:45 by makacem          ###   ########.fr       */
+/*   Updated: 2023/05/29 15:31:40 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+void   Bureaucrat::signForm(Form &form)
+{
+    try
+    {
+        form.beSigned(*this);
+        std::cout << this->getName() << " signed " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << this->getName() << " couldn’t sign " << form.getName() << " because " << e.what();
+    }
+    
+}
 
 class Bureaucrat::GradeTooHighException : public std::exception
 {
     public:
         const char* what() const throw()
         {
-            return "GradeTooHigh\n";
+            return "Bureaucrat::GradeTooHighException\n";
         }
 };
 
@@ -26,7 +40,7 @@ class Bureaucrat::GradeTooLowException : public std::exception
     public:
         const char* what() const throw()
         {
-            return "GradeTooLow\n";
+            return "Bureaucrat::GradeTooLowException\n";
         }
 };
 
@@ -39,7 +53,7 @@ Bureaucrat::Bureaucrat(std::string const name, int grade)
     else if (grade > 150)
         throw GradeTooLowException();
     this->grade = grade;
-    std::cout << "Constructor called\n";
+    std::cout << "Bureaucrat Constructor called\n";
 }
 
 void    Bureaucrat::incrementGrade(void)
@@ -73,14 +87,14 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
     if (this != &other)
     {
         this->grade = other.grade;
-        *((std::string *)&this->name) = other.name;
+        (std::string)this->name = other.name;
     }
     return *this;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Destructor called\n";
+    std::cout << "Bureaucrat Destructor called\n";
 }
 
 std::string Bureaucrat::getName(void) const
