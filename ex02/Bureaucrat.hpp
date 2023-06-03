@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:14:23 by makacem           #+#    #+#             */
-/*   Updated: 2023/05/29 15:31:00 by makacem          ###   ########.fr       */
+/*   Updated: 2023/06/03 18:36:19 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 # define BUREAUCRAT_HPP
 # include <iostream>
 # include <exception>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -35,7 +35,8 @@ class Bureaucrat
         void    decrementGrade(void);
         class GradeTooHighException;
         class GradeTooLowException;
-        void    signForm(Form &form);
+        void    signForm(AForm &form);
+        void    executeForm(AForm const &form);
 
 };
 

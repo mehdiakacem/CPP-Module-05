@@ -6,13 +6,28 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:03:48 by makacem           #+#    #+#             */
-/*   Updated: 2023/05/29 15:31:40 by makacem          ###   ########.fr       */
+/*   Updated: 2023/06/03 18:56:05 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-void   Bureaucrat::signForm(Form &form)
+void    Bureaucrat::executeForm(AForm const &form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->getName() << " executed " << form.getName() << "\n";
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << "error: " << e.what() << '\n';
+    }
+    
+}
+
+
+void   Bureaucrat::signForm(AForm &form)
 {
     try
     {
