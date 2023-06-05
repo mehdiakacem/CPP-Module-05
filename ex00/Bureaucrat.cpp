@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:03:48 by makacem           #+#    #+#             */
-/*   Updated: 2023/05/29 16:52:45 by makacem          ###   ########.fr       */
+/*   Updated: 2023/06/05 10:42:04 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class Bureaucrat::GradeTooHighException : public std::exception
     public:
         const char* what() const throw()
         {
-            return "GradeTooHigh\n";
+            return "Bureaucrat::GradeTooHigh\n";
         }
 };
 
@@ -26,7 +26,7 @@ class Bureaucrat::GradeTooLowException : public std::exception
     public:
         const char* what() const throw()
         {
-            return "GradeTooLow\n";
+            return "Bureaucrat::GradeTooLow\n";
         }
 };
 

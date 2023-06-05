@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 16:38:52 by makacem           #+#    #+#             */
-/*   Updated: 2023/05/29 16:52:04 by makacem          ###   ########.fr       */
+/*   Updated: 2023/06/05 10:38:13 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int Form::getSign(void) const
 
 std::ostream   &operator<<(std::ostream &output, Form const &src)
 {
-    output << src.getName() << ", Form grade to sign " << src.getGradeToSign() << ", grade to execute " << src.getGradeToExecute() << ".\n";
+    output << src.getName() << ", sign " << src.getSign() << ", grade to sign " << src.getGradeToSign() << ", grade to execute " << src.getGradeToExecute() << ".\n";
     return output;
 }
 
