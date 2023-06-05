@@ -6,7 +6,7 @@
 /*   By: makacem <makacem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:17:03 by makacem           #+#    #+#             */
-/*   Updated: 2023/06/04 17:25:00 by makacem          ###   ########.fr       */
+/*   Updated: 2023/06/05 11:18:10 by makacem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ AForm *Intern::makeForm(std::string name, std::string target)
 
 Intern::Intern(void)
 {
-    std::cout << "Default constructor called\n";
+    std::cout << "Intern default constructor called\n";
 }
 
 Intern::Intern(Intern const &other)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "Intern copy constructor called\n";
     *this = other;
 }
 
@@ -71,5 +71,5 @@ Intern &Intern::operator=(const Intern &other)
 
 Intern::~Intern()
 {
-    std::cout << "Intern Destructor called\n";
+    std::cout << "Intern destructor called\n";
 }
